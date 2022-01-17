@@ -94,7 +94,6 @@ nav .color .pink {
 .items {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   width: 60%;
   height: 60%;
   overflow-y: scroll;

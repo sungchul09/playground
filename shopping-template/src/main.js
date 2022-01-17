@@ -7,6 +7,7 @@ function loadItems() {
 function displayItems(items) {
     const container = document.querySelector('.items')
     container.innerHTML = items.map(item => createHTMLString(item)).join('');
+    console.log(container.innerHTML)
 }
 
 function createHTMLString(item) {
