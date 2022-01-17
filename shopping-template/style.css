@@ -1,0 +1,121 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--color-black);
+  height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+header img {
+  cursor: pointer;
+}
+
+header img:hover,
+.clothes img:hover,
+.color li:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 300ms ease;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* clothes */
+nav .clothes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav .clothes li {
+  margin: 0 15px;
+  width: 50px;
+  height: 50px;
+}
+
+nav .clothes li img {
+  width: 100%;
+}
+
+/* color */
+nav .color {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav .color li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+nav .color .blue {
+  background: var(--color-blue);
+}
+
+nav .color .yellow {
+  background: var(--color-yellow);
+}
+
+nav .color .pink {
+  background: var(--color-pink);
+}
+
+/* list */
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
+  height: 60%;
+  overflow-y: scroll;
+  margin: 8px auto;
+}
+
+.items .item {
+  display: flex;
+  align-items: center;
+
+  background: var(--color-white);
+  margin: 5px 0;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.items .item img {
+  width: 50px;
+  padding: 10px;
+}
+
+.items .item .info {
+  padding: 10px;
+}

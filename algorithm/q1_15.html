@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function solution(str) {
+        let answer = "";
+        /* 
+        let middle = Math.floor(str.length / 2);
+        if (str.length % 2 == 0) {
+            answer += str[middle - 1];
+        }
+        answer += str[middle]; 
+        */
+        let odd = str.length % 2;
+        if (odd === 0) {
+            answer = str.substring((str.length / 2) - 1, (str.length / 2) + 1);
+        } else {
+            answer = str.substring(parseInt(str.length / 2), parseInt(str.length / 2) + 1);
+        }
+        return answer;
+    }
+    console.log(solution("sutdyd"));
+</script>
+
+</html>

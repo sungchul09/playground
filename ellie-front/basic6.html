@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    class Shape {
+        constructor(width, height, color) {
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+
+        draw() {
+            console.log(`drawing ${this.color} color of ${this.getArea()}`);
+        }
+
+        getArea() {
+            return this.width * this.height;
+        }
+    }
+
+    class Rectangle extends Shape {};
+    class Triangle extends Shape {
+        getArea() {
+            return (this.width * this.height) / 2;
+        }
+    };
+
+    const rectangle = new Rectangle(20, 20, 'blue');
+    rectangle.draw();
+    const triangle = new Triangle(20, 20, 'red');
+    triangle.draw();
+
+    console.log(rectangle instanceof Rectangle); // true
+    console.log(triangle instanceof Rectangle);  // false
+    console.log(triangle instanceof Triangle);   // true
+    console.log(triangle instanceof Shape);      // true
+    console.log(triangle instanceof Object);     // true
+</script>
+
+</html>

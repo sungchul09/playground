@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. 실무 기준: 실무 기준, ECMAScript 스펙, 프로그램 개발, 강의 형태</title>
+</head>
+
+<body>
+    <div id="sports">
+        스포츠
+        <div>수영</div>
+    </div>
+</body>
+<script>
+    const clickHandler = (event) => {
+        const freestyle = document.createElement("p");
+        freestyle.textContent = "자유형";
+        const butterfly = document.createElement("p");
+        butterfly.textContent = "접영";
+        sports.prepend(freestyle, butterfly);
+        console.log(sports.outerHTML);
+    };
+    const sports = document.getElementById("sports");
+    sports.onclick = clickHandler;
+</script>
+
+</html>
