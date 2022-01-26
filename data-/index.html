@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: beige;
+            margin-bottom: 20px;
+        }
+
+        [data-display-name="dream"] {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-index="1" data-display-name="dream"></div>
+    <div data-index="2" data-display-name="coding"></div>
+    <script>
+        const display = document.querySelector("div[data-display-name='dream']");
+        console.log(display.dataset)
+    </script>
+</body>
+
+</html>
