@@ -48,7 +48,7 @@ button {
   color: red;
   transform: scale(1.1);
 }
-.divider {
+.item__divider {
   width: 90%;
   height: 1px;
   background-color: lightgray;
