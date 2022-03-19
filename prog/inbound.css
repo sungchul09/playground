@@ -1,0 +1,16 @@
+.input__qrcode,
+.input__matnr,
+.input__maktx,
+.input__menge,
+.input__meins {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+.input p {
+  font-size: 25px;
+  width: 150px;
+}
+.input input {
+  width: 200px;
+}
