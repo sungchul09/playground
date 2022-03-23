@@ -50,7 +50,7 @@ header .button {
 /* pltsiz */
 /* ========================================= */
 .pltsiz {
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -71,4 +71,52 @@ header .button {
 
 .select label {
   margin-right: 25px;
+}
+
+/* ========================================= */
+/* pltdata */
+/* ========================================= */
+.pltdata {
+  margin-top: 40px;
+}
+
+.pltdata table {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+table caption {
+  font-size: 25px;
+}
+
+th,
+td {
+  padding: 15px 20px;
+  margin: auto;
+  border: 2px solid grey;
+}
+
+/* ========================================= */
+/* packdata */
+/* ========================================= */
+.packdata {
+  margin-top: 40px;
+}
+
+.packdata table {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+table caption {
+  font-size: 25px;
+}
+
+th,
+td {
+  padding: 15px 20px;
+  margin: auto;
+  border: 2px solid grey;
 }
