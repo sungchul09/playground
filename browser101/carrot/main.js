@@ -1,6 +1,7 @@
 const btn = document.querySelector('.btn');
-
-btn.addEventListener('click', (e) => {
-  const status = e.target.dataset.status;
-  console.log(status);
+const play = document.querySelector('#play');
+const stop = document.querySelector('#stop');
+btn.addEventListener('click', () => {
+  play.classList.toggle('active');
+  stop.classList.toggle('active');
 });
