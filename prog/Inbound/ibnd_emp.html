@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script defer src="input.js"></script>
-    <link rel="stylesheet" href="input.css">
+    <script defer src="ibnd_emp.js"></script>
+    <link rel="stylesheet" href="ibnd_emp.css">
     <title>Document</title>
 </head>
 
@@ -52,26 +52,19 @@
     <section class="packdata">
         <table>
             <caption>📄 팔레트 입고 예약 현황</caption>
-            <tr>
-                <th class="col1 header1">적재번호</th>
-                <th class="col2 header2">PLT 번호</th>
-                <th class="col3 header3">출발위치</th>
-                <th class="col4 header4">호기</th>
-                <th class="col5 header5">작업일시</th>
-            </tr>
-            <tr>
-                <td class="col1 data1">col1</td>
-                <td class="col2 data2">col2</td>
-                <td class="col3 data3">col3</td>
-                <td class="col4 data4">col4</td>
-                <td class="col5 data5">col5</td>
+            <tr class="header">
+                <th class="header__loadid">loadid</th>
+                <th class="header__serial">serial</th>
+                <th class="header__wrktyp">wrktyp</th>
+                <th class="header__frsttn">frsttn</th>
+                <th class="header__tosttn">tosttn</th>
+                <th class="header__pltsiz">pltsiz</th>
+                <th class="header__setdat">setdat</th>
+                <th class="header__userid">userid</th>
             </tr>
         </table>
 
     </section>
 </body>
-
-<script>
-</script>
 
 </html>
