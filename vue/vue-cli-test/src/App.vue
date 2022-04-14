@@ -1,15 +1,7 @@
 <template>
-  <form v-on:submit.prevent="submitForm">
-    <div>
-      <label for="username">id:</label>
-      <input id="username" type="text" v-model="username" />
-    </div>
-    <div>
-      <label for="password">password:</label>
-      <input type="password" id="password" v-model="password" />
-    </div>
-    <button type="submit">login</button>
-  </form>
+  <div>
+    {{ message | capitalize }}
+  </div>
 </template>
 
 <script>
@@ -20,6 +12,7 @@ export default {
     return {
       username: "",
       password: "",
+      message: "asdf",
     };
   },
   methods: {
@@ -38,6 +31,11 @@ export default {
         .catch(function (error) {
           console.log(error);
         });
+    },
+    filters: {
+      capitalize: function (data) {
+        return data.toUpperCase();
+      },
     },
   },
 };

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function solution(a, b, c) {
+        const max = Math.max(a, b, c);
+        const sum = [a, b, c].reduce((sum, value) => { return sum + value });
+        if ((sum - max) < max) {
+            return 'NO';
+        }
+        return 'YES';
+    }
+
+    console.log(solution(13, 24, 17));
+</script>
+
+</html>
