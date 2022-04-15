@@ -12,11 +12,16 @@
 
 </body>
 <script>
-    function solution() {
-
+    function solution(n, a) {
+        const count = a.filter((v, i) => {
+            if (v > Math.max(...a.slice(0, i))) {
+                return v;
+            }
+        })
+        return count;
     }
 
-    console.log(solution());
+    console.log(solution(8, [130, 135, 148, 140, 145, 150, 150, 153]));
 </script>
 
 </html>

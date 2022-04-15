@@ -12,11 +12,22 @@
 
 </body>
 <script>
-    function solution() {
+    function solution(str) {
+        const split = str.toUpperCase().replace(/[^A-Z]/g, '').split('');
+        console.log(split);
+        for (let i = 0; i < split.length; i++) {
+            if (i === split.length / 2) {
+                break;
+            }
 
+            if (split[i] !== split[split.length - 1 - i]) {
+                return 'NO';
+                break;
+            }
+        }
+        return 'YES';
     }
-
-    console.log(solution());
+    console.log(solution('found7, time: study; Yduts; emit, 7Dnuof'));
 </script>
 
 </html>

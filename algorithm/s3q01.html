@@ -12,11 +12,27 @@
 
 </body>
 <script>
-    function solution() {
+    function solution(str) {
+        const length = str.length - 1;
+        const middle = (length + 1) / 2;
+        const split = str.toUpperCase().split('');
+        let result = '';
+        for (let i = 0; i <= length; i++) {
+            if (i === middle) {
+                break;
+            }
+            if (split[i] === split[length - i]) {
+                result = 'YES';
+            } else {
+                result = 'NO';
+                break;
+            }
 
+        }
+        return result;
     }
 
-    console.log(solution());
+    console.log(solution('gooG'));
 </script>
 
 </html>

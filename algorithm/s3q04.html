@@ -12,11 +12,30 @@
 
 </body>
 <script>
-    function solution() {
+    function solution(str, word) {
+        const split = str.split('');
+        let result = [];
 
+        for (let i = 0; i < split.length; i++) {
+            let count = 0;
+            while (split[i] !== word) {
+                if (i + count >= split.length && i - count < 0) {
+                    break;
+                }
+                if (i - count > -1 && split[i - count] === word) {
+                    break;
+                }
+                if (i + count < split.length && split[i + count] === word) {
+                    break;
+                }
+                count++;
+            }
+            result.push(count);
+        }
+        return result;
     }
 
-    console.log(solution());
+    console.log(solution('teachermode', 'e'));
 </script>
 
 </html>
