@@ -18,9 +18,11 @@ export default {
   },
   methods: {
     addTodo: function () {
-      // key, value로 set
-      ls.setItem(this.newTodoItem, this.newTodoItem);
-      this.newTodoItem = "";
+      if (this.newTodoItem !== "") {
+        const obj = { completed: false, item: this.newTodoItem };
+        ls.setItem(this.newTodoItem, JSON.stringify(obj));
+        this.clearInput();
+      }
     },
     clearInput: function () {
       this.newTodoItem = "";

@@ -1,9 +1,14 @@
 <template>
   <div>
     <ul>
-      <li v-for="todoItem in todoItems" v-bind:key="todoItem" class="shadow">
+      <li
+        v-for="(todoItem, index) in todoItems"
+        v-bind:key="todoItem"
+        class="shadow"
+      >
+        <i class="checkBtn fas fa-check" v-on:click="toggleComplete"></i>
         {{ todoItem }}
-        <span class="removeBtn" v-on:click="removeTodo">
+        <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
           <i class="fas fa-trash-alt"></i>
         </span>
       </li>
@@ -12,6 +17,7 @@
 </template>
 
 <script>
+const ls = localStorage;
 export default {
   data: function () {
     return {
@@ -19,22 +25,27 @@ export default {
     };
   },
   created: function () {
-    const ls = localStorage;
     if (ls.length > 0) {
       for (let i = 0; i < ls.length; i++) {
         if (ls.key(i) !== "" && ls.key(i) !== "loglevel:webpack-dev-server") {
           this.todoItems.push(ls.key(i));
         }
       }
+      console.log(this.todoItems);
     }
   },
   methods: {
-    removeTodo: function () {},
+    removeTodo: function (todoItem, index) {
+      ls.removeItem(todoItem);
+      this.todoItems.splice(index, 1);
+    },
+
+    toggleComplete: function () {},
   },
 };
 </script>
 
-<style>
+<style scoped>
 ul {
   list-style-type: none;
   padding-left: 0px;
@@ -71,5 +82,20 @@ li {
 .removeBtn {
   margin-left: auto;
   color: #de4343;
+}
+
+.checkBtn {
+  line-height: 45px;
+  color: #62acde;
+  margin-right: 5px;
+}
+
+.checkBtnCompleted {
+  color: #b3adad;
+}
+
+.textCompleted {
+  text-decoration: line-through;
+  color: #b3adad;
 }
 </style>
