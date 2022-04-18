@@ -12,7 +12,6 @@ import TodoHeader from "./components/TodoHeader.vue";
 import TodoInput from "./components/TodoInput.vue";
 import TodoList from "./components/TodoList.vue";
 import TodoFooter from "./components/TodoFooter.vue";
-
 export default {
   components: {
     "todo-header": TodoHeader,
@@ -26,7 +25,7 @@ export default {
 <style>
 body {
   text-align: center;
-  background-color: white;
+  background-color: rgba(222, 221, 230, 0.692);
 }
 
 input {

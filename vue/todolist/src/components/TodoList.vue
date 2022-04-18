@@ -2,12 +2,18 @@
   <div>
     <ul>
       <li
-        v-for="(todoItem, index) in todoItems"
-        v-bind:key="todoItem"
+        v-for="(todoItem, index) in this.$store.state.todoItems"
+        v-bind:key="todoItem.item"
         class="shadow"
       >
-        <i class="checkBtn fas fa-check" v-on:click="toggleComplete"></i>
-        {{ todoItem }}
+        <i
+          class="checkBtn fas fa-check"
+          v-bind:class="{ checkBtnCompleted: todoItem.completed }"
+          v-on:click="toggleComplete(todoItem)"
+        ></i>
+        <span v-bind:class="{ textCompleted: todoItem.completed }">{{
+          todoItem.item
+        }}</span>
         <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
           <i class="fas fa-trash-alt"></i>
         </span>
@@ -17,30 +23,15 @@
 </template>
 
 <script>
-const ls = localStorage;
 export default {
-  data: function () {
-    return {
-      todoItems: [],
-    };
-  },
-  created: function () {
-    if (ls.length > 0) {
-      for (let i = 0; i < ls.length; i++) {
-        if (ls.key(i) !== "" && ls.key(i) !== "loglevel:webpack-dev-server") {
-          this.todoItems.push(ls.key(i));
-        }
-      }
-      console.log(this.todoItems);
-    }
-  },
   methods: {
     removeTodo: function (todoItem, index) {
-      ls.removeItem(todoItem);
-      this.todoItems.splice(index, 1);
+      this.$store.commit("removeOneItem", { todoItem: todoItem, index: index });
     },
 
-    toggleComplete: function () {},
+    toggleComplete: function (todoItem) {
+      this.$store.commit("toggleOneItem", todoItem);
+    },
   },
 };
 </script>
