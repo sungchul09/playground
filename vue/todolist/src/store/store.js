@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 const ls = localStorage;
@@ -17,12 +17,17 @@ const storage = {
         }
         return arr;
     },
-}
+};
 
 export const store = new Vuex.Store({
     state: {
         headerText: 'ToDoList!',
         todoItems: storage.fetch(),
+    },
+    getters: {
+        storedTodoItems(state) {
+            return state.todoItems;
+        },
     },
     mutations: {
         addItem(state, payload) {
@@ -48,6 +53,6 @@ export const store = new Vuex.Store({
             }
             ls.removeItem(todoItem.item);
             ls.setItem(todoItem.item, JSON.stringify(todoItem));
-        }
-    }
-})
+        },
+    },
+});
