@@ -19,7 +19,7 @@ export default {};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 50px 0 20px 20px;
+  padding: 150px 0 20px 20px;
   height: 2000px;
 }
 
@@ -38,6 +38,6 @@ export default {};
 }
 
 a {
-  padding: 15px 0;
+  padding: 10px 0 10px 20px;
 }
 </style>

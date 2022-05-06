@@ -27,5 +27,6 @@ body {
 
 #app .toolbar {
   width: 200px;
+  margin-right: 30px;
 }
 </style>
