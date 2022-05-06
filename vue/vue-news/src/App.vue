@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <tool-bar></tool-bar>
+    <tool-bar class="toolbar"></tool-bar>
     <router-view></router-view>
   </div>
 </template>
@@ -14,4 +14,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+}
+
+#app .toolbar {
+  width: 200px;
+}
+</style>

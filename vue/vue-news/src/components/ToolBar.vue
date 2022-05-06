@@ -16,10 +16,11 @@ export default {};
   font-weight: bold;
   color: rgb(220, 20, 20);
   background-color: rgb(24, 61, 124);
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 50px 0 20px 20px;
+  height: 2000px;
 }
 
 .header .router-link-exact-active {
@@ -37,6 +38,6 @@ export default {};
 }
 
 a {
-  padding: 10px;
+  padding: 15px 0;
 }
 </style>
