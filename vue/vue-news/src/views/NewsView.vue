@@ -2,7 +2,7 @@
   <div>
     <h1>ASK</h1>
     <div>
-      <div v-for="value in newsdata" :key="value.id">
+      <div v-for="value in this.$store.state.news" :key="value.id">
         {{ value.id }} {{ value.title }} {{ value.points }}
       </div>
     </div>

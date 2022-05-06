@@ -10,21 +10,15 @@
 </template>
 
 <script>
-import { fetchAskList } from '../api/index.js';
+import { mapGetters } from 'vuex';
 export default {
-  data() {
-    return {
-      askdata: [],
-    };
+  computed: {
+    ...mapGetters({
+      askdata: 'fetchedAsk',
+    }),
   },
   created() {
-    fetchAskList()
-      .then((response) => {
-        this.askdata = response.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.$store.dispatch('FETCH_ASK');
   },
 };
 </script>
