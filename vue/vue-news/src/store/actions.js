@@ -33,10 +33,10 @@ export default {
         console.log(error);
       });
   },
-  FETCH_USER({ commit }) {
-    fetchUserInfo()
+  FETCH_USER({ commit }, name) {
+    fetchUserInfo(name)
       .then(({ data }) => {
-        commit('SET_USERINFO', data);
+        commit('SET_USER', data);
       })
       .catch((error) => {
         console.log(error);

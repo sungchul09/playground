@@ -1,31 +1,23 @@
 <template>
   <div>
     <div>USER</div>
-    <p v-for="user in this.userdata" :key="user">
-      {{ user }}
-    </p>
+    <p>name: {{ userInfo.id }}</p>
+    <p>karma: {{ userInfo.karma }}</p>
+    <p>created: {{ userInfo.created }}</p>
+    <p>about: {{ userInfo.about }}</p>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
 export default {
-  data() {
-    return {
-      userdata: [],
-    };
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
+    },
   },
   created() {
-    console.log(this.$route.params.id);
-    axios
-      .get(`https://api.hnpwa.com/v0/user/${this.$route.params.id}.json`)
-      .then((resolve) => {
-        console.log(resolve);
-        this.userdata = resolve.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const userName = this.$route.params.id;
+    this.$store.dispatch('FETCH_USER', userName);
   },
 };
 </script>
