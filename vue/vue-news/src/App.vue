@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <tool-bar class="toolbar"></tool-bar>
-    <router-view></router-view>
+    <transition name="page"> <router-view></router-view></transition>
   </div>
 </template>
 
@@ -20,13 +20,28 @@ body {
   margin: 0;
 }
 
-#app {
-  display: flex;
-  flex-direction: row;
+a {
+  color: #34495e;
+  text-decoration: none;
 }
 
-#app .toolbar {
-  width: 200px;
-  margin-right: 30px;
+a.router-link-exact-active {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #42b883;
+  text-decoration: underline;
+}
+
+/* Router Transition */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
 </style>

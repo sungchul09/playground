@@ -17,10 +17,6 @@ export default {};
   color: rgb(220, 20, 20);
   background-color: rgb(24, 61, 124);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 150px 0 20px 20px;
-  height: 2000px;
 }
 
 .header .router-link-exact-active {

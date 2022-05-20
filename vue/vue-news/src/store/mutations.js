@@ -12,6 +12,6 @@ export default {
     state.user = user;
   },
   SET_ITEM(state, item) {
-    state.items = item;
+    state.item = item;
   },
 };
