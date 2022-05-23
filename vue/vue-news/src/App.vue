@@ -1,15 +1,19 @@
 <template>
   <div id="app">
     <tool-bar class="toolbar"></tool-bar>
-    <transition name="page"> <router-view></router-view></transition>
+    <transition name="page"> <router-view></router-view> </transition>
+    <Spinner :loading="this.$store.state.loadingStatus"></Spinner>
   </div>
 </template>
 
 <script>
 import ToolBar from './components/ToolBar.vue';
+import Spinner from './components/Spinner.vue';
+
 export default {
   components: {
     ToolBar,
+    Spinner,
   },
 };
 </script>

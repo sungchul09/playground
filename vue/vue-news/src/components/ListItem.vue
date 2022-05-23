@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ title }}</h2>
+    <h2>TITLE</h2>
     <ul class="news-list">
       <li class="post" v-for="item in listItems" :key="item.id">
         <!-- 포인트 영역 -->
@@ -24,10 +24,7 @@
           </p>
           <small class="link-text">
             by
-            <router-link
-              v-if="item.user"
-              class="link-text"
-              v-bind:to="`/user/${item.user}`"
+            <router-link v-if="item.user" class="link-text" v-bind:to="`/user/${item.user}`"
               >{{ item.user }}
               <a :href="item.url">
                 {{ item.domain }}
@@ -41,40 +38,10 @@
 </template>
 
 <script>
-let name = '';
 export default {
-  created() {
-    // this.$store.dispatch('FETCH_NEWS');
-    name = this.$route.name;
-    console.log(name);
-    if (name === 'news') {
-      this.$store.dispatch('FETCH_NEWS');
-    } else if (name === 'ask') {
-      this.$store.dispatch('FETCH_ASK');
-    } else if (name === 'jobs') {
-      this.$store.dispatch('FETCH_JOBS');
-    }
-  },
   computed: {
     listItems() {
-      if (name === 'news') {
-        return this.$store.state.news;
-      } else if (name === 'ask') {
-        return this.$store.state.ask;
-      } else if (name === 'jobs') {
-        return this.$store.state.jobs;
-      }
-      return '';
-    },
-    title() {
-      if (name === 'news') {
-        return 'NEWS';
-      } else if (name === 'ask') {
-        return 'ASK';
-      } else if (name === 'jobs') {
-        return 'JOBS';
-      }
-      return '';
+      return this.$store.state.list;
     },
   },
 };

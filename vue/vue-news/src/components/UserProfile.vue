@@ -8,7 +8,8 @@
       <div class="time">
         <slot name="time"></slot>
       </div>
-      <slot name="karma">{{ userInfo.karma }}</slot>
+
+      <slot name="karma"></slot>
     </div>
   </div>
 </template>
