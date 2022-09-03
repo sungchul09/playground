@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Counter {
+        constructor(runEveryFiveTimes) {
+            this.counter = 0;
+            this.callback = runEveryFiveTimes;
+        }
+        increase() {
+            this.counter++;
+            if (this.counter % 5 == 0) {
+                this.callback && this.callback(this.counter);
+            } else {
+                console.log(this.counter);
+            }
+        }
+    }
+
+    function printSomething(num) {
+        console.log(`${num} 에 도달하였습니다.`);
+    }
+
+    function alertNum(num) {
+        alert(`alert! ${num}`);
+    }
+    const printCounter = new Counter(printSomething);
+    const alertCounter = new Counter(alertNum);
+    printCounter.increase();
+    printCounter.increase();
+    printCounter.increase();
+    printCounter.increase();
+    printCounter.increase();
+    printCounter.increase();
+    printCounter.increase();
+    printCounter.increase();
+    printCounter.increase();
+    printCounter.increase();
+    alertCounter.increase();
+    alertCounter.increase();
+    alertCounter.increase();
+    alertCounter.increase();
+    alertCounter.increase();
+</script>
+
+</html>

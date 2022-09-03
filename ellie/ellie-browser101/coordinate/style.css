@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    background: black;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.line {
+    position: absolute;
+    background-color: white;
+}
+
+.horizontal {
+    width: 100%;
+    height: 1px;
+}
+
+.vertical {
+    height: 100%;
+    width: 1px;
+}
+
+.target {
+    -webkit-user-drag: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.tag {
+    color: white;
+    font-size: 38px;
+    position: absolute;
+    transform: translate(20px, 20px);
+}
