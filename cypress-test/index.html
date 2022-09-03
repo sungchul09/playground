@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="counter">
+    <p class="counter__title">counter</p>
+    <div id="value" class="counter__number">0</div>
+    <div class="counter__buttons">
+      <div class="buttons__minus">-</div>
+      <div class="buttons__reset">Reset</div>
+      <div class="buttons__plus">+</div>
+    </div>
+  </div>
+</body>
+<script>
+  const number = document.querySelector('.counter__number')
+  const minus = document.querySelector('.buttons__minus')
+  const reset = document.querySelector('.buttons__reset')
+  const plus = document.querySelector('.buttons__plus')
+  
+  minus.addEventListener('click', () => {
+    const counter = Number.parseInt(number.innerText)
+    if (counter === 0) {
+      return
+    }
+    number.innerText = counter - 1
+  })
+
+  plus.addEventListener('click', () => {
+    const counter = Number.parseInt(number.innerText)
+    if (counter === 99) {
+      return
+    }
+    number.innerText = counter + 1
+  })
+
+  reset.addEventListener('click', () => {
+    number.innerText = 0
+  })
+</script>
+<style lang="scss">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter__title {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 50px 0px 25px 0px;  
+}
+
+.counter__number {
+  font-size: 80px;
+  font-weight: bold;
+  height: 100px;
+  margin: 25px 0px 25px 0px;   
+}
+
+.counter__buttons {
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 25px 0px 0px 0px;   
+}
+
+.counter__buttons > div {
+  cursor: pointer;
+}
+
+.buttons__minus {
+  width: 80px;
+  height: 60px;
+  background-color: grey;
+  color: white;
+  border-radius: 10%;
+  line-height: 60px;
+  text-align: center;
+}
+
+.buttons__reset {
+  width: 80px;
+  height: 60px;
+  background-color: grey;
+  color: white;
+  border-radius: 10%;
+  line-height: 60px;
+  text-align: center;
+  margin: 0px 50px;
+}
+
+.buttons__plus {
+  width: 80px;
+  height: 60px;
+  background-color: grey;
+  color: white;
+  border-radius: 10%;
+  line-height: 60px;
+  text-align: center;
+}
+</style>
+</html>

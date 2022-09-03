@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function solution(n, a) {
+        const count = a.filter((v, i) => {
+            if (v > Math.max(...a.slice(0, i))) {
+                return v;
+            }
+        })
+        return count;
+    }
+
+    console.log(solution(8, [130, 135, 148, 140, 145, 150, 150, 153]));
+</script>
+
+</html>
